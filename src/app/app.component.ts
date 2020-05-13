@@ -13,6 +13,6 @@ export class AppComponent {
   constructor(private _empservice: EmployeeServicesService) { }
 
   ngOnInit(): void {
-    this.employees = this._empservice.getData();
+    this._empservice.getData().subscribe (data => this.employees = data);
   }
 }
