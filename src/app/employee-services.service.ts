@@ -1,0 +1,23 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EmployeeServicesService {
+
+  employeeData: any[] = [
+    {id: '101', name: 'Sanjeev', gender: 'male', role: 'Project Manager'},
+    {id: '102', name: 'Satish', gender: 'male', role: 'Technical Lead'},
+    {id: '103', name: 'Akshay', gender: 'male', role: 'Developer'},
+    {id: '104', name: 'Arpita', gender: 'female', role: 'Developer'},
+    {id: '105', name: 'Mounika', gender: 'female', role: 'Business Analyst'},
+    {id: '106', name: 'Veena', gender: 'female', role: 'QA Engineer'}
+  ];
+
+  getData()
+  {
+    return this.employeeData;
+  }
+
+  constructor() { }
+}

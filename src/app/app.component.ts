@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EmployeeServicesService } from './employee-services.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MySecondProject';
+  employees = [];
+
+  constructor(private _empservice: EmployeeServicesService) { }
+
+  ngOnInit(): void {
+    this.employees = this._empservice.getData();
+  }
 }
