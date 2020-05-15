@@ -1,0 +1,55 @@
+
+<!-- The following section uses template-driven form -->
+<form #f='ngForm' (ngSubmit)='onSubmit(f)'>
+    Name <input type='text' name='name' #model='ngModel' ngModel required > <br><br>
+    <p *ngIf= 'model.touched && model.errors' > 
+        Name is required
+    </p>
+    Email <input type='text' name='email' #email='ngModel' ngModel email > <br><br>
+    Adderss <input type='text' name='address' ngModel> <br><br>
+
+    <button class='button uk-button-primary' type='submit' > Submit </button>
+</form>
+<!-- The following section uses Reactive form -->
+<br><br>
+<h2> Profile Information </h2>
+<form [formGroup]='profileForm' (ngSubmit)='OnProfileSubmit()'> 
+    <label>
+        First Name: <input type='text' formControlName='firstName' required >
+    </label>
+    <br><br>
+    <label>
+        Last Name: <input type='text' formControlName='lastName' required>
+    </label>
+    <br><br>
+    <div formGroupName='address'> 
+        <h3> Address </h3>
+        <label>
+            Street: <input type='text' formControlName='street' required >
+        </label>
+        <br>
+        <label>
+            City: <input type='text' formControlName='city' >
+        </label>
+        <br>
+        <label>
+            State: <input type='text' formControlName='state' >
+        </label>
+        <br>
+        <label>
+            Zip: <input type='text' formControlName='zip' required>
+        </label>
+        
+    </div>
+    <br><br>
+    <button type='submit' [disabled]='!profileForm.valid'> Submit Profile </button>
+
+    <p>
+        <button (click)='updateProfile()' > Update Profile </button>
+    </p>
+
+    <p>
+        Profile Form Status: {{ profileForm.status}}
+    </p>
+
+</form>
