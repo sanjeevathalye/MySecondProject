@@ -9,6 +9,7 @@ import { EmployeeServicesService } from './employee-services.service';
 export class AppComponent {
   title = 'MySecondProject';
   employees = [];
+  xyz = 1;
 
   constructor(private _empservice: EmployeeServicesService) { }
 

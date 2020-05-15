@@ -92,7 +92,7 @@
 
 <!-- The following fragment displays the ID and name of the employees using Angular services and 
      Dependency Intgration -->
-     
+<!-- Temporarily commented out 
 <h3> List of Employees from root component using Angular services and Dependency Integration</h3>
 <table>
     <thead>
@@ -108,4 +108,9 @@
 </table>
 <br> <br>
 <app-employees></app-employees>
+-->
+<app-lifecycle *ngIf="xyz == 1" [prop]= 'xyz'></app-lifecycle>
+<div>
+  <button (click)="xyz = xyz+1"> Change the value </button>
+</div>
 <router-outlet></router-outlet>
